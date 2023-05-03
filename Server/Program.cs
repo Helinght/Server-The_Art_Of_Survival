@@ -10,6 +10,6 @@ namespace Server
     class Server
 
     {
-        Port:
+        var Port:
     }
 }
