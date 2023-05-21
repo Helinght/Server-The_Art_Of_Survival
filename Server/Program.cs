@@ -57,7 +57,7 @@ class Server
                 return;
             }
             string msg = Encoding.UTF8.GetString(dataBuffer, 0, count);
-            Console.WriteLine("[" + DateTime.Now + "]" + "(" + "Chat_message" + ")" + "Pyro" + msg);
+            Console.WriteLine("[" + DateTime.Now + "]" + "(" + "Chat_message" + ")" + msg);
 
             clientSocket.BeginReceive(dataBuffer, 0, 1024, SocketFlags.None, ReceiveCallBack, clientSocket);// асинхронный прием
 
