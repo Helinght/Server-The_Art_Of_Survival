@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+
 //Console.WriteLine("[",DateTime.Now,"]","(","INFO",")","");
-/* https://russianblogs.com/article/30793054479/ */
+
 class Server
 {
-    static void Main(string[] args)
+    static void Main()
     {
         StartServerAsync();
+        Console.ReadLine();
     }
 
     public static void StartServerAsync()
@@ -25,9 +27,9 @@ class Server
 
         serverSocket.Bind(IpAndPort);
         serverSocket.Listen(0);
-        Console.WriteLine("[", DateTime.Now, "]", "(", "INFO", ")", "Server start!");
-        Console.WriteLine("[", DateTime.Now, "]", "(", "INFO", ")", "Ip - ", ipAddress);
-        Console.WriteLine("[", DateTime.Now, "]", "(", "INFO", ")", "Port - ", Port);
+        Console.WriteLine("["+ DateTime.Now + "]" + "(" + "INFO" + ")" + "Server start!");
+        Console.WriteLine("["+ DateTime.Now + "]" + "(" + "INFO" + ")" + "Ip - " + ipAddress);
+        Console.WriteLine("["+ DateTime.Now + "]" + "(" + "INFO" + ")" + "Port - " + Port);
         serverSocket.BeginAccept(AcceptCallBack, serverSocket);
     }
 
